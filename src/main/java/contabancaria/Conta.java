@@ -67,6 +67,10 @@ public class Conta {
      * - O saldo deve ser atualizado corretamente.
      */
     public void depositar(double valor) {
+        if (!ativa) {
+            throw new IllegalStateException("A conta está inativa.");
+        }
+
         validarValorPositivo(valor);
         saldo += valor;
     }
