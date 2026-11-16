@@ -86,6 +86,10 @@ public class Conta {
     public void sacar(double valor) {
         validarValorPositivo(valor);
 
+        if (!ativa) {
+            throw new IllegalStateException("A conta está encerrada.");
+        }
+
         if (valor > saldo) {
             throw new IllegalStateException("Saldo insuficiente.");
         }
