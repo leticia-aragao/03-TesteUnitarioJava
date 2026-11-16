@@ -90,6 +90,7 @@ public class Conta {
      *   - O saldo de ambas as contas deve ser atualizado corretamente.
      */
     public void transferir(Conta destino, double valor) {
+        validarValorPositivo(valor);
         saldo -= valor;
         destino.saldo += valor;
     }
