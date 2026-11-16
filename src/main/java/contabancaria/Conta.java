@@ -106,6 +106,10 @@ public class Conta {
      * - O saldo de ambas as contas deve ser atualizado corretamente.
      */
     public void transferir(Conta destino, double valor) {
+        if (!ativa || !destino.ativa) {
+            throw new IllegalStateException("Uma das contas está inativa.");
+        }
+
         validarValorPositivo(valor);
 
         if (valor > saldo) {
