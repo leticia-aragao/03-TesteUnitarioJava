@@ -248,5 +248,12 @@ class ContaTest {
     // - Encerrar conta já inativa lança IllegalStateException
     // - Conta encerrada tem isAtiva() == false
     // =======================================================
+    @Test
+    void encerrar_ContaComSaldoZero_DesativaConta() {
+        var conta = new Conta("Maria");
 
+        conta.encerrar();
+
+        assertTrue(!conta.isAtiva());
+    }
 }
