@@ -90,8 +90,8 @@ public class Conta {
      *   - O saldo de ambas as contas deve ser atualizado corretamente.
      */
     public void transferir(Conta destino, double valor) {
-        // TODO: Implemente usando TDD
-        throw new UnsupportedOperationException();
+        saldo -= valor;
+        destino.saldo += valor;
     }
 
     /**
